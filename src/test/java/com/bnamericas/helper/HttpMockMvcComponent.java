@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 public class HttpMockMvcComponent {
 
     /**
-     * @param uri END_POINT to send GET request. i.e "cars"
+     * @param uri END_POINT to send GET request. i.e "holidays"
      * @return RequestBuilder
      */
     public RequestBuilder getAll(String uri) {
@@ -24,7 +24,7 @@ public class HttpMockMvcComponent {
 
     /**
      * @param id Key of POJO with Long data type
-     * @param uri END_POINT to send GET request. i.e "cars"
+     * @param uri END_POINT to send GET request. i.e "holiday"
      * @return RequestBuilder
      */
     public RequestBuilder getById(String uri, Long id) {
@@ -36,7 +36,7 @@ public class HttpMockMvcComponent {
 
     /**
      * @param content POJO with JSON format
-     * @param uri END_POINT to send POST request. i.e "cars"
+     * @param uri END_POINT to send POST request. i.e "holiday"
      * @return RequestBuilder
      */
     public RequestBuilder post(String uri, String content) {
@@ -49,7 +49,7 @@ public class HttpMockMvcComponent {
 
     /**
      * @param content POJO with JSON format
-     * @param uri END_POINT to send PUT request. i.e "cars"
+     * @param uri END_POINT to send PUT request. i.e "holiday"
      * @return RequestBuilder
      */
     public RequestBuilder put(String uri, String content) {
@@ -61,7 +61,7 @@ public class HttpMockMvcComponent {
     }
 
     /**
-     * @param uri END_POINT to send PUT request. i.e "cars"
+     * @param uri END_POINT to send PUT request. i.e "holiday"
      * @param id Key of POJO with Long data type
      * @return
      */

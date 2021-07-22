@@ -4,6 +4,7 @@ import com.bnamericas.api.Constants;
 import com.bnamericas.helper.HttpMockMvcComponent;
 import com.bnamericas.holidays.model.Holidays;
 import com.bnamericas.holidays.service.HolidaysService;
+import com.bnamericas.holidays.service.external.HerokuHolidayServiceHandler;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.jupiter.api.Disabled;
@@ -37,23 +38,29 @@ public class HolidaysTest {
     HolidaysService holidaysService;
 
     @Autowired
+    HerokuHolidayServiceHandler herokuHolidayServiceHandler;
+
+    @Autowired
     HttpMockMvcComponent mvcComponent;
 
     @Test
     public void runAllCases() throws Exception {
-        add();
-        edit();
-        findAll();
-        findOne();
-        delete();
+        herokuHolidayServiceHandler.holidays().forEach(holiday -> {
+            try {
+                add(holiday);
+
+                //not-required (additional in this test)
+                edit();
+                findAll();
+                findOne();
+                delete();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
-    public void add() throws Exception {
-        Holidays model = new Holidays();
-        model.setDate("2016-01-01");
-        model.setTitle("Año Nuevo");
-        model.setExtra("Civil e Irrenunciable");
-
+    public void add(Holidays model) throws Exception {
         performAdd(model);
     }
 

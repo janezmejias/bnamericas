@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.st.market</groupId>
-    <artifactId>bnamerias-challenge</artifactId>
+    <artifactId>bnamericas-challenge</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bnamerias-challenge</name>
+    <name>bnamericas-challenge</name>
     <description>Desription here</description>
 
     <properties>
